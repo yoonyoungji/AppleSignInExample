@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak private var lastNameLabel: UILabel!
     @IBOutlet weak private var emailLabel: UILabel!
     @IBOutlet weak var realUserState: UILabel!
+    @IBOutlet weak var tokenTextView: UITextView!
     
     
     //userDefaults 에 저장
@@ -33,7 +34,8 @@ class HomeViewController: UIViewController {
         lastNameLabel.text = userInfoDic?["familyName"]
         emailLabel.text = userInfoDic?["email"]
         realUserState.text = userInfoDic?["realUserState"]
-
+        tokenTextView.text = userInfoDic?["identityToken"]
+        tokenTextView.isEditable = false
     }
     
     static func Push() {
